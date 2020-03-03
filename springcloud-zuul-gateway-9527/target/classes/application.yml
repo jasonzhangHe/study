@@ -1,0 +1,30 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul-gateway
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7004.com:7004/eureka
+  instance:
+    instance-id: gateway-9527.com   #自定义主机名
+    prefer-ip-address: true      #访问路径可以显示ip地址
+
+
+info:   #info追加
+  app.name: guigu-cloud
+  company.name: www.guigu.com
+  build.artifactId: $project.artifactId$
+
+  build.version: $project.version$
+
+zuul:
+  prefix: /guigu #域名前缀   //端口名+guigu/访问路径
+  routes:
+    mydept.serviceId: springcloud-dept  #域名映射
+    mydept.path: /mydept/**
+   ignore-services: "*"  #springcloud-dept 不在使用这个域名访问,单个使用具体域名，多个使用*

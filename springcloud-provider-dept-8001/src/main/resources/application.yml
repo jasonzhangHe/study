@@ -1,0 +1,45 @@
+server:
+  port: 8001
+
+
+  #mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml    #mapper映射文件
+  type-aliases-package: com.guigu.springcloud.entity  #所有Entity的包
+  config-location: classpath:/mybatis-config.xml   #mybatis配置文件路径
+#mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/cloud01?useUnicode=true&characterEncoding=utf8
+    dbcp2:
+      initial-size: 5   #初始化连接数
+      min-idle: 5     #最小连接数
+      max-wait-millis: 200  #等待获取数据最大连接时间
+  application:
+#  d对外暴露的名字
+    name: springcloud-dept
+
+##eureka
+# eureka:
+#    client: #客户端注册进eureka服务列表内
+#     service-url:
+#        defaultZone:
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7004.com:7004/eureka
+  instance:
+    instance-id: springcloud-dept8001   #自定义主机名
+    prefer-ip-address: true      #访问路径可以显示ip地址
+
+
+info:   #info追加
+  app.name: guigu-cloud
+  company.name: www.guigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

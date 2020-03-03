@@ -1,0 +1,5 @@
+com\guigu\service\DeptService.class
+com\guigu\DeptProvider8001_Hystrix_App.class
+com\guigu\service\impl\DeptServiceImpl.class
+com\guigu\controller\DeptController.class
+com\guigu\mapper\DeptMapper.class

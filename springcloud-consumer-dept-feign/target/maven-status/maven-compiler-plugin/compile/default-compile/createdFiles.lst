@@ -1,0 +1,3 @@
+com\guigu\springcloud\config\ConfigBeans.class
+com\guigu\springcloud\DeptConsumer80_Fegin_App.class
+com\guigu\springcloud\controller\DeptConsumerController.class

@@ -1,0 +1,5 @@
+com\guigu\DeptProvider8001_APP.class
+com\guigu\service\DeptService.class
+com\guigu\service\impl\DeptServiceImpl.class
+com\guigu\controller\DeptController.class
+com\guigu\mapper\DeptMapper.class
